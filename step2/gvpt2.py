@@ -494,7 +494,7 @@ def compute_chi_deperturbed_cm(
 
             if (k, (i, i)) in fermi_set:
                 # safe form (no 4 wi^2 - wk^2)
-                s += -0.5 * (phi ** 2) * (1.0 / (2.0 * wi + wk + eps_div) + 4.0 / (wk + eps_div))
+                s += 0.5 * (phi ** 2) * (1.0 / (2.0 * wi + wk + eps_div) + 4.0 / (wk + eps_div))
             else:
                 num = (8.0 * wi ** 2 - 3.0 * wk ** 2) * (phi ** 2)
                 den = wk * (4.0 * wi ** 2 - wk ** 2)
@@ -536,7 +536,7 @@ def compute_chi_deperturbed_cm(
                     # j + k = i : drop 1/(-wi+wj+wk)
                     delta_ij = (
                         1.0 / (wi + wj + wk + eps_div) +
-                        1.0 / (wi + wj - wk + eps_div) +
+                        1.0 / (-wi - wj + wk + eps_div) +
                         1.0 / (wi - wj + wk + eps_div)
                     ) / (-2.0)
 
@@ -544,7 +544,7 @@ def compute_chi_deperturbed_cm(
                     # i + k = j : drop 1/(wi-wj+wk)
                     delta_ij = (
                         1.0 / (wi + wj + wk + eps_div) +
-                        1.0 / (wi + wj - wk + eps_div) +
+                        1.0 / (-wi - wj + wk + eps_div) +
                         1.0 / (-wi + wj + wk + eps_div)
                     ) / (-2.0)
 
