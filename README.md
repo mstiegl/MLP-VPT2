@@ -1,5 +1,25 @@
 # MLP-VPT2
 
+> ## This fork: Fortran translation of step 2
+>
+> This fork adds a Fortran version of `step2/gvpt2.py` (the DVPT2 + GVPT2
+> calculation; energies only, no IR/Raman intensities). Everything new is
+> under **`step2_fortran/`**:
+>
+> | what | where |
+> |------|-------|
+> | Fortran source (5 files), `Makefile`, `run` script | [`step2_fortran/`](step2_fortran/) |
+> | how it maps to the Python, the step-by-step procedure, and the validation results | [`step2_fortran/README.md`](step2_fortran/README.md) |
+> | validation data: step-1 input files, stress-test inputs, complete Python and Fortran outputs for every case, and a script that re-runs the comparison | [`step2_fortran/validation/`](step2_fortran/validation/) |
+>
+> Headline result: on the C2417905 example the Fortran output is byte-identical
+> to the Python output (`diff` is empty), and on stress tests with up to 77 Fermi
+> resonances and 15-state polyads all eigenvalues, fundamentals, state energies
+> and ZPVEs agree to every printed digit. Build with `make` in `step2_fortran`
+> and check with `step2_fortran/validation/compare.sh`.
+>
+> The rest of this file is the original MLP-VPT2 README, plus section (2B).
+
 ## About
 The software performs VPT2 calculation for the anharmonic vibrational frequencies and optionally IR and Raman intensities using machine-learned potentials.
 
