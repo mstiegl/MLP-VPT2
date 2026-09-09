@@ -34,6 +34,10 @@ Copy the `XXX.out` files from `step1` to `step2`. Modify the script `run` to adj
     
 If the "--enable_intensity" argument is present, the double harmonic  intensities of IR and Raman are calculated using MACE-MDP model for dipole and polarizability. Otherwise, the intensity will be skipped and only the energies of fundamental transitions are calculated.
 
+### (2B) Fortran version of step 2 (folder step2_fortran):
+
+A Fortran translation of `gvpt2.py` (energies only, no IR/Raman intensities). Build it with `make` (needs a Fortran compiler and LAPACK), copy the `XXX.out` files from step 1 into `step2_fortran`, and run `./gvpt2.x --mol_name=XXX --num_modes=N` (or `./run`). It produces the same report as the Python script; see `step2_fortran/README.md`.
+
 ## Third-Party Software
 
 The Python implementation of the finite-difference force-constant

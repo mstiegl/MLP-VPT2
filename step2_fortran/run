@@ -1,0 +1,6 @@
+#!/bin/bash
+# Same arguments as step2/run; the *.out files from step 1 must be in this directory.
+
+./gvpt2.x \
+  --mol_name="C2417905" \
+  --num_modes=21

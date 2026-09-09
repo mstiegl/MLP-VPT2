@@ -4,3 +4,4 @@
 step1_fortran/*.out
 step1_python/*.out
 step2/*.out
+step2_fortran/*.out
